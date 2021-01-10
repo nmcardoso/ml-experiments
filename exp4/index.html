@@ -1,0 +1,4516 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.dataTables.min.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/fixedheader/3.1.7/js/dataTables.fixedHeader.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <style>
+    body {
+      padding: 10px 10px 0 10px;
+      font-family: sans-serif;
+    }
+
+    thead input {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <table style="width: 100%;" border="0" class="dataframe display" id="dataframe">
+    <thead>
+      <tr style="text-align: left;">
+        <th>learning_rate</th>
+        <th>batch_size</th>
+        <th>sampling</th>
+        <th>optimizer</th>
+        <th>train_epochs</th>
+        <th>pretrained_weights</th>
+        <th>dense_layers</th>
+        <th>max_val_acc</th>
+        <th>min_val_loss</th>
+        <th>test_acc</th>
+        <th>test_loss</th>
+        <th>plot</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.182455</td>
+        <td>0.905797</td>
+        <td>0.273510</td>
+        <td><a href="imgs/1.jpg" data-lightbox="train"><img src="imgs/1.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.189619</td>
+        <td>0.938406</td>
+        <td>0.219955</td>
+        <td><a href="imgs/2.jpg" data-lightbox="train"><img src="imgs/2.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.200725</td>
+        <td>0.927536</td>
+        <td>0.369336</td>
+        <td><a href="imgs/3.jpg" data-lightbox="train"><img src="imgs/3.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.158906</td>
+        <td>0.887681</td>
+        <td>0.227118</td>
+        <td><a href="imgs/4.jpg" data-lightbox="train"><img src="imgs/4.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.169062</td>
+        <td>0.913043</td>
+        <td>0.232187</td>
+        <td><a href="imgs/5.jpg" data-lightbox="train"><img src="imgs/5.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.194482</td>
+        <td>0.927536</td>
+        <td>0.248885</td>
+        <td><a href="imgs/6.jpg" data-lightbox="train"><img src="imgs/6.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.163618</td>
+        <td>0.942029</td>
+        <td>0.205556</td>
+        <td><a href="imgs/7.jpg" data-lightbox="train"><img src="imgs/7.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.177527</td>
+        <td>0.938406</td>
+        <td>0.184171</td>
+        <td><a href="imgs/8.jpg" data-lightbox="train"><img src="imgs/8.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.200158</td>
+        <td>0.916667</td>
+        <td>0.279128</td>
+        <td><a href="imgs/9.jpg" data-lightbox="train"><img src="imgs/9.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.198081</td>
+        <td>0.923913</td>
+        <td>0.262091</td>
+        <td><a href="imgs/10.jpg" data-lightbox="train"><img src="imgs/10.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.179059</td>
+        <td>0.923913</td>
+        <td>0.212854</td>
+        <td><a href="imgs/11.jpg" data-lightbox="train"><img src="imgs/11.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.203218</td>
+        <td>0.927536</td>
+        <td>0.266463</td>
+        <td><a href="imgs/12.jpg" data-lightbox="train"><img src="imgs/12.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.185450</td>
+        <td>0.894928</td>
+        <td>0.258776</td>
+        <td><a href="imgs/13.jpg" data-lightbox="train"><img src="imgs/13.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.167628</td>
+        <td>0.942029</td>
+        <td>0.220763</td>
+        <td><a href="imgs/14.jpg" data-lightbox="train"><img src="imgs/14.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.194185</td>
+        <td>0.884058</td>
+        <td>0.290948</td>
+        <td><a href="imgs/15.jpg" data-lightbox="train"><img src="imgs/15.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.161535</td>
+        <td>0.898551</td>
+        <td>0.247004</td>
+        <td><a href="imgs/16.jpg" data-lightbox="train"><img src="imgs/16.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.191554</td>
+        <td>0.923913</td>
+        <td>0.268837</td>
+        <td><a href="imgs/17.jpg" data-lightbox="train"><img src="imgs/17.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.913306</td>
+        <td>0.215288</td>
+        <td>0.891304</td>
+        <td>0.276214</td>
+        <td><a href="imgs/18.jpg" data-lightbox="train"><img src="imgs/18.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.192369</td>
+        <td>0.905797</td>
+        <td>0.222144</td>
+        <td><a href="imgs/19.jpg" data-lightbox="train"><img src="imgs/19.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.189249</td>
+        <td>0.898551</td>
+        <td>0.266957</td>
+        <td><a href="imgs/20.jpg" data-lightbox="train"><img src="imgs/20.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.204405</td>
+        <td>0.869565</td>
+        <td>0.249651</td>
+        <td><a href="imgs/21.jpg" data-lightbox="train"><img src="imgs/21.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.176004</td>
+        <td>0.913043</td>
+        <td>0.211500</td>
+        <td><a href="imgs/22.jpg" data-lightbox="train"><img src="imgs/22.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.194570</td>
+        <td>0.913043</td>
+        <td>0.249814</td>
+        <td><a href="imgs/23.jpg" data-lightbox="train"><img src="imgs/23.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.194874</td>
+        <td>0.884058</td>
+        <td>0.259571</td>
+        <td><a href="imgs/24.jpg" data-lightbox="train"><img src="imgs/24.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.196082</td>
+        <td>0.931159</td>
+        <td>0.220694</td>
+        <td><a href="imgs/25.jpg" data-lightbox="train"><img src="imgs/25.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.178902</td>
+        <td>0.916667</td>
+        <td>0.242008</td>
+        <td><a href="imgs/26.jpg" data-lightbox="train"><img src="imgs/26.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.226995</td>
+        <td>0.884058</td>
+        <td>0.276473</td>
+        <td><a href="imgs/27.jpg" data-lightbox="train"><img src="imgs/27.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.186246</td>
+        <td>0.913043</td>
+        <td>0.288107</td>
+        <td><a href="imgs/28.jpg" data-lightbox="train"><img src="imgs/28.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.169129</td>
+        <td>0.905797</td>
+        <td>0.237179</td>
+        <td><a href="imgs/29.jpg" data-lightbox="train"><img src="imgs/29.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.210001</td>
+        <td>0.905797</td>
+        <td>0.248038</td>
+        <td><a href="imgs/30.jpg" data-lightbox="train"><img src="imgs/30.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.185128</td>
+        <td>0.909420</td>
+        <td>0.229923</td>
+        <td><a href="imgs/31.jpg" data-lightbox="train"><img src="imgs/31.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.170713</td>
+        <td>0.909420</td>
+        <td>0.214869</td>
+        <td><a href="imgs/32.jpg" data-lightbox="train"><img src="imgs/32.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.193252</td>
+        <td>0.923913</td>
+        <td>0.290964</td>
+        <td><a href="imgs/33.jpg" data-lightbox="train"><img src="imgs/33.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.176654</td>
+        <td>0.902174</td>
+        <td>0.238868</td>
+        <td><a href="imgs/34.jpg" data-lightbox="train"><img src="imgs/34.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.190493</td>
+        <td>0.913043</td>
+        <td>0.230039</td>
+        <td><a href="imgs/35.jpg" data-lightbox="train"><img src="imgs/35.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.197490</td>
+        <td>0.916667</td>
+        <td>0.296535</td>
+        <td><a href="imgs/36.jpg" data-lightbox="train"><img src="imgs/36.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.184312</td>
+        <td>0.916667</td>
+        <td>0.228632</td>
+        <td><a href="imgs/37.jpg" data-lightbox="train"><img src="imgs/37.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.177168</td>
+        <td>0.923913</td>
+        <td>0.231936</td>
+        <td><a href="imgs/38.jpg" data-lightbox="train"><img src="imgs/38.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.198072</td>
+        <td>0.934783</td>
+        <td>0.249951</td>
+        <td><a href="imgs/39.jpg" data-lightbox="train"><img src="imgs/39.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.207973</td>
+        <td>0.913043</td>
+        <td>0.253703</td>
+        <td><a href="imgs/40.jpg" data-lightbox="train"><img src="imgs/40.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.178546</td>
+        <td>0.934783</td>
+        <td>0.195897</td>
+        <td><a href="imgs/41.jpg" data-lightbox="train"><img src="imgs/41.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.193678</td>
+        <td>0.927536</td>
+        <td>0.251734</td>
+        <td><a href="imgs/42.jpg" data-lightbox="train"><img src="imgs/42.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.179433</td>
+        <td>0.938406</td>
+        <td>0.196739</td>
+        <td><a href="imgs/43.jpg" data-lightbox="train"><img src="imgs/43.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.170691</td>
+        <td>0.902174</td>
+        <td>0.249964</td>
+        <td><a href="imgs/44.jpg" data-lightbox="train"><img src="imgs/44.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.207794</td>
+        <td>0.913043</td>
+        <td>0.266611</td>
+        <td><a href="imgs/45.jpg" data-lightbox="train"><img src="imgs/45.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.179227</td>
+        <td>0.913043</td>
+        <td>0.210119</td>
+        <td><a href="imgs/46.jpg" data-lightbox="train"><img src="imgs/46.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.171089</td>
+        <td>0.920290</td>
+        <td>0.208206</td>
+        <td><a href="imgs/47.jpg" data-lightbox="train"><img src="imgs/47.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.217138</td>
+        <td>0.869565</td>
+        <td>0.308859</td>
+        <td><a href="imgs/48.jpg" data-lightbox="train"><img src="imgs/48.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.194300</td>
+        <td>0.905797</td>
+        <td>0.236851</td>
+        <td><a href="imgs/49.jpg" data-lightbox="train"><img src="imgs/49.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.181742</td>
+        <td>0.909420</td>
+        <td>0.239967</td>
+        <td><a href="imgs/50.jpg" data-lightbox="train"><img src="imgs/50.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.901210</td>
+        <td>0.234598</td>
+        <td>0.894928</td>
+        <td>0.315728</td>
+        <td><a href="imgs/51.jpg" data-lightbox="train"><img src="imgs/51.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.199913</td>
+        <td>0.927536</td>
+        <td>0.216676</td>
+        <td><a href="imgs/52.jpg" data-lightbox="train"><img src="imgs/52.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.164502</td>
+        <td>0.887681</td>
+        <td>0.237293</td>
+        <td><a href="imgs/53.jpg" data-lightbox="train"><img src="imgs/53.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.913306</td>
+        <td>0.207626</td>
+        <td>0.880435</td>
+        <td>0.289181</td>
+        <td><a href="imgs/54.jpg" data-lightbox="train"><img src="imgs/54.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.190298</td>
+        <td>0.916667</td>
+        <td>0.219953</td>
+        <td><a href="imgs/55.jpg" data-lightbox="train"><img src="imgs/55.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.177956</td>
+        <td>0.923913</td>
+        <td>0.237234</td>
+        <td><a href="imgs/56.jpg" data-lightbox="train"><img src="imgs/56.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.218724</td>
+        <td>0.909420</td>
+        <td>0.231898</td>
+        <td><a href="imgs/57.jpg" data-lightbox="train"><img src="imgs/57.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.193636</td>
+        <td>0.934783</td>
+        <td>0.222330</td>
+        <td><a href="imgs/58.jpg" data-lightbox="train"><img src="imgs/58.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.177984</td>
+        <td>0.923913</td>
+        <td>0.194777</td>
+        <td><a href="imgs/59.jpg" data-lightbox="train"><img src="imgs/59.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.217061</td>
+        <td>0.873188</td>
+        <td>0.268045</td>
+        <td><a href="imgs/60.jpg" data-lightbox="train"><img src="imgs/60.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.186079</td>
+        <td>0.923913</td>
+        <td>0.202246</td>
+        <td><a href="imgs/61.jpg" data-lightbox="train"><img src="imgs/61.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.185212</td>
+        <td>0.913043</td>
+        <td>0.227363</td>
+        <td><a href="imgs/62.jpg" data-lightbox="train"><img src="imgs/62.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.224027</td>
+        <td>0.909420</td>
+        <td>0.234186</td>
+        <td><a href="imgs/63.jpg" data-lightbox="train"><img src="imgs/63.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.176494</td>
+        <td>0.927536</td>
+        <td>0.198157</td>
+        <td><a href="imgs/64.jpg" data-lightbox="train"><img src="imgs/64.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.181186</td>
+        <td>0.923913</td>
+        <td>0.273661</td>
+        <td><a href="imgs/65.jpg" data-lightbox="train"><img src="imgs/65.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.915323</td>
+        <td>0.213944</td>
+        <td>0.913043</td>
+        <td>0.255459</td>
+        <td><a href="imgs/66.jpg" data-lightbox="train"><img src="imgs/66.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.180009</td>
+        <td>0.916667</td>
+        <td>0.224382</td>
+        <td><a href="imgs/67.jpg" data-lightbox="train"><img src="imgs/67.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.177014</td>
+        <td>0.920290</td>
+        <td>0.199922</td>
+        <td><a href="imgs/68.jpg" data-lightbox="train"><img src="imgs/68.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.228258</td>
+        <td>0.891304</td>
+        <td>0.244275</td>
+        <td><a href="imgs/69.jpg" data-lightbox="train"><img src="imgs/69.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.179373</td>
+        <td>0.923913</td>
+        <td>0.205527</td>
+        <td><a href="imgs/70.jpg" data-lightbox="train"><img src="imgs/70.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.170921</td>
+        <td>0.909420</td>
+        <td>0.265591</td>
+        <td><a href="imgs/71.jpg" data-lightbox="train"><img src="imgs/71.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.211378</td>
+        <td>0.898551</td>
+        <td>0.237417</td>
+        <td><a href="imgs/72.jpg" data-lightbox="train"><img src="imgs/72.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.211436</td>
+        <td>0.923913</td>
+        <td>0.195141</td>
+        <td><a href="imgs/73.jpg" data-lightbox="train"><img src="imgs/73.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.183510</td>
+        <td>0.920290</td>
+        <td>0.207580</td>
+        <td><a href="imgs/74.jpg" data-lightbox="train"><img src="imgs/74.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.211624</td>
+        <td>0.931159</td>
+        <td>0.208573</td>
+        <td><a href="imgs/75.jpg" data-lightbox="train"><img src="imgs/75.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.203274</td>
+        <td>0.923913</td>
+        <td>0.221691</td>
+        <td><a href="imgs/76.jpg" data-lightbox="train"><img src="imgs/76.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.184083</td>
+        <td>0.934783</td>
+        <td>0.171208</td>
+        <td><a href="imgs/77.jpg" data-lightbox="train"><img src="imgs/77.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.222047</td>
+        <td>0.920290</td>
+        <td>0.248384</td>
+        <td><a href="imgs/78.jpg" data-lightbox="train"><img src="imgs/78.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.172398</td>
+        <td>0.938406</td>
+        <td>0.169888</td>
+        <td><a href="imgs/79.jpg" data-lightbox="train"><img src="imgs/79.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.174664</td>
+        <td>0.927536</td>
+        <td>0.187452</td>
+        <td><a href="imgs/80.jpg" data-lightbox="train"><img src="imgs/80.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.231332</td>
+        <td>0.898551</td>
+        <td>0.235419</td>
+        <td><a href="imgs/81.jpg" data-lightbox="train"><img src="imgs/81.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.187933</td>
+        <td>0.934783</td>
+        <td>0.214997</td>
+        <td><a href="imgs/82.jpg" data-lightbox="train"><img src="imgs/82.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.167600</td>
+        <td>0.923913</td>
+        <td>0.187916</td>
+        <td><a href="imgs/83.jpg" data-lightbox="train"><img src="imgs/83.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.226082</td>
+        <td>0.898551</td>
+        <td>0.278756</td>
+        <td><a href="imgs/84.jpg" data-lightbox="train"><img src="imgs/84.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.204039</td>
+        <td>0.913043</td>
+        <td>0.213223</td>
+        <td><a href="imgs/85.jpg" data-lightbox="train"><img src="imgs/85.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.190730</td>
+        <td>0.931159</td>
+        <td>0.188871</td>
+        <td><a href="imgs/86.jpg" data-lightbox="train"><img src="imgs/86.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.903226</td>
+        <td>0.243272</td>
+        <td>0.902174</td>
+        <td>0.337682</td>
+        <td><a href="imgs/87.jpg" data-lightbox="train"><img src="imgs/87.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.913306</td>
+        <td>0.204251</td>
+        <td>0.920290</td>
+        <td>0.195547</td>
+        <td><a href="imgs/88.jpg" data-lightbox="train"><img src="imgs/88.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.192456</td>
+        <td>0.931159</td>
+        <td>0.186760</td>
+        <td><a href="imgs/89.jpg" data-lightbox="train"><img src="imgs/89.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.219942</td>
+        <td>0.836957</td>
+        <td>0.421111</td>
+        <td><a href="imgs/90.jpg" data-lightbox="train"><img src="imgs/90.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.196202</td>
+        <td>0.920290</td>
+        <td>0.184161</td>
+        <td><a href="imgs/91.jpg" data-lightbox="train"><img src="imgs/91.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.184581</td>
+        <td>0.887681</td>
+        <td>0.238605</td>
+        <td><a href="imgs/92.jpg" data-lightbox="train"><img src="imgs/92.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.216388</td>
+        <td>0.862319</td>
+        <td>0.244822</td>
+        <td><a href="imgs/93.jpg" data-lightbox="train"><img src="imgs/93.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.190045</td>
+        <td>0.931159</td>
+        <td>0.184727</td>
+        <td><a href="imgs/94.jpg" data-lightbox="train"><img src="imgs/94.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.183171</td>
+        <td>0.916667</td>
+        <td>0.194419</td>
+        <td><a href="imgs/95.jpg" data-lightbox="train"><img src="imgs/95.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.915323</td>
+        <td>0.221252</td>
+        <td>0.931159</td>
+        <td>0.232752</td>
+        <td><a href="imgs/96.jpg" data-lightbox="train"><img src="imgs/96.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.175082</td>
+        <td>0.931159</td>
+        <td>0.183266</td>
+        <td><a href="imgs/97.jpg" data-lightbox="train"><img src="imgs/97.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.175475</td>
+        <td>0.931159</td>
+        <td>0.184440</td>
+        <td><a href="imgs/98.jpg" data-lightbox="train"><img src="imgs/98.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.215702</td>
+        <td>0.927536</td>
+        <td>0.211270</td>
+        <td><a href="imgs/99.jpg" data-lightbox="train"><img src="imgs/99.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.186067</td>
+        <td>0.902174</td>
+        <td>0.217724</td>
+        <td><a href="imgs/100.jpg" data-lightbox="train"><img src="imgs/100.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.183763</td>
+        <td>0.920290</td>
+        <td>0.201314</td>
+        <td><a href="imgs/101.jpg" data-lightbox="train"><img src="imgs/101.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.211133</td>
+        <td>0.869565</td>
+        <td>0.296064</td>
+        <td><a href="imgs/102.jpg" data-lightbox="train"><img src="imgs/102.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.181817</td>
+        <td>0.923913</td>
+        <td>0.189349</td>
+        <td><a href="imgs/103.jpg" data-lightbox="train"><img src="imgs/103.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.181160</td>
+        <td>0.916667</td>
+        <td>0.199631</td>
+        <td><a href="imgs/104.jpg" data-lightbox="train"><img src="imgs/104.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.915323</td>
+        <td>0.219897</td>
+        <td>0.909420</td>
+        <td>0.225700</td>
+        <td><a href="imgs/105.jpg" data-lightbox="train"><img src="imgs/105.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.177470</td>
+        <td>0.913043</td>
+        <td>0.200157</td>
+        <td><a href="imgs/106.jpg" data-lightbox="train"><img src="imgs/106.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.166696</td>
+        <td>0.931159</td>
+        <td>0.169618</td>
+        <td><a href="imgs/107.jpg" data-lightbox="train"><img src="imgs/107.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.238458</td>
+        <td>0.913043</td>
+        <td>0.314446</td>
+        <td><a href="imgs/108.jpg" data-lightbox="train"><img src="imgs/108.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.151898</td>
+        <td>0.952899</td>
+        <td>0.196325</td>
+        <td><a href="imgs/109.jpg" data-lightbox="train"><img src="imgs/109.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.170968</td>
+        <td>0.934783</td>
+        <td>0.214444</td>
+        <td><a href="imgs/110.jpg" data-lightbox="train"><img src="imgs/110.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.172588</td>
+        <td>0.945652</td>
+        <td>0.203957</td>
+        <td><a href="imgs/111.jpg" data-lightbox="train"><img src="imgs/111.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.159538</td>
+        <td>0.942029</td>
+        <td>0.233829</td>
+        <td><a href="imgs/112.jpg" data-lightbox="train"><img src="imgs/112.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.160100</td>
+        <td>0.934783</td>
+        <td>0.194635</td>
+        <td><a href="imgs/113.jpg" data-lightbox="train"><img src="imgs/113.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.185998</td>
+        <td>0.884058</td>
+        <td>0.278805</td>
+        <td><a href="imgs/114.jpg" data-lightbox="train"><img src="imgs/114.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.159065</td>
+        <td>0.898551</td>
+        <td>0.268489</td>
+        <td><a href="imgs/115.jpg" data-lightbox="train"><img src="imgs/115.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.941532</td>
+        <td>0.169641</td>
+        <td>0.938406</td>
+        <td>0.210935</td>
+        <td><a href="imgs/116.jpg" data-lightbox="train"><img src="imgs/116.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.165266</td>
+        <td>0.931159</td>
+        <td>0.206022</td>
+        <td><a href="imgs/117.jpg" data-lightbox="train"><img src="imgs/117.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.169030</td>
+        <td>0.938406</td>
+        <td>0.212703</td>
+        <td><a href="imgs/118.jpg" data-lightbox="train"><img src="imgs/118.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.941532</td>
+        <td>0.151286</td>
+        <td>0.938406</td>
+        <td>0.172123</td>
+        <td><a href="imgs/119.jpg" data-lightbox="train"><img src="imgs/119.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.184907</td>
+        <td>0.942029</td>
+        <td>0.231548</td>
+        <td><a href="imgs/120.jpg" data-lightbox="train"><img src="imgs/120.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.182286</td>
+        <td>0.913043</td>
+        <td>0.237626</td>
+        <td><a href="imgs/121.jpg" data-lightbox="train"><img src="imgs/121.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.174678</td>
+        <td>0.920290</td>
+        <td>0.217903</td>
+        <td><a href="imgs/122.jpg" data-lightbox="train"><img src="imgs/122.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.189195</td>
+        <td>0.909420</td>
+        <td>0.243997</td>
+        <td><a href="imgs/123.jpg" data-lightbox="train"><img src="imgs/123.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.172740</td>
+        <td>0.927536</td>
+        <td>0.240699</td>
+        <td><a href="imgs/124.jpg" data-lightbox="train"><img src="imgs/124.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.188656</td>
+        <td>0.927536</td>
+        <td>0.225584</td>
+        <td><a href="imgs/125.jpg" data-lightbox="train"><img src="imgs/125.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.186210</td>
+        <td>0.927536</td>
+        <td>0.229190</td>
+        <td><a href="imgs/126.jpg" data-lightbox="train"><img src="imgs/126.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.179280</td>
+        <td>0.923913</td>
+        <td>0.233579</td>
+        <td><a href="imgs/127.jpg" data-lightbox="train"><img src="imgs/127.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.180676</td>
+        <td>0.902174</td>
+        <td>0.249981</td>
+        <td><a href="imgs/128.jpg" data-lightbox="train"><img src="imgs/128.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.175293</td>
+        <td>0.916667</td>
+        <td>0.265202</td>
+        <td><a href="imgs/129.jpg" data-lightbox="train"><img src="imgs/129.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.187429</td>
+        <td>0.887681</td>
+        <td>0.287696</td>
+        <td><a href="imgs/130.jpg" data-lightbox="train"><img src="imgs/130.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.165282</td>
+        <td>0.927536</td>
+        <td>0.199644</td>
+        <td><a href="imgs/131.jpg" data-lightbox="train"><img src="imgs/131.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.194805</td>
+        <td>0.836957</td>
+        <td>0.464949</td>
+        <td><a href="imgs/132.jpg" data-lightbox="train"><img src="imgs/132.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.166310</td>
+        <td>0.927536</td>
+        <td>0.219948</td>
+        <td><a href="imgs/133.jpg" data-lightbox="train"><img src="imgs/133.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.171403</td>
+        <td>0.920290</td>
+        <td>0.217099</td>
+        <td><a href="imgs/134.jpg" data-lightbox="train"><img src="imgs/134.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.189634</td>
+        <td>0.931159</td>
+        <td>0.244258</td>
+        <td><a href="imgs/135.jpg" data-lightbox="train"><img src="imgs/135.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.177571</td>
+        <td>0.913043</td>
+        <td>0.211758</td>
+        <td><a href="imgs/136.jpg" data-lightbox="train"><img src="imgs/136.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.182387</td>
+        <td>0.927536</td>
+        <td>0.212238</td>
+        <td><a href="imgs/137.jpg" data-lightbox="train"><img src="imgs/137.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.173805</td>
+        <td>0.927536</td>
+        <td>0.215592</td>
+        <td><a href="imgs/138.jpg" data-lightbox="train"><img src="imgs/138.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.166672</td>
+        <td>0.913043</td>
+        <td>0.216726</td>
+        <td><a href="imgs/139.jpg" data-lightbox="train"><img src="imgs/139.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.174357</td>
+        <td>0.927536</td>
+        <td>0.210177</td>
+        <td><a href="imgs/140.jpg" data-lightbox="train"><img src="imgs/140.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.175395</td>
+        <td>0.905797</td>
+        <td>0.238011</td>
+        <td><a href="imgs/141.jpg" data-lightbox="train"><img src="imgs/141.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.168224</td>
+        <td>0.909420</td>
+        <td>0.225406</td>
+        <td><a href="imgs/142.jpg" data-lightbox="train"><img src="imgs/142.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.179807</td>
+        <td>0.942029</td>
+        <td>0.193104</td>
+        <td><a href="imgs/143.jpg" data-lightbox="train"><img src="imgs/143.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.180247</td>
+        <td>0.945652</td>
+        <td>0.195429</td>
+        <td><a href="imgs/144.jpg" data-lightbox="train"><img src="imgs/144.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.161981</td>
+        <td>0.923913</td>
+        <td>0.195461</td>
+        <td><a href="imgs/145.jpg" data-lightbox="train"><img src="imgs/145.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.178544</td>
+        <td>0.931159</td>
+        <td>0.227436</td>
+        <td><a href="imgs/146.jpg" data-lightbox="train"><img src="imgs/146.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.186487</td>
+        <td>0.938406</td>
+        <td>0.220513</td>
+        <td><a href="imgs/147.jpg" data-lightbox="train"><img src="imgs/147.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.165340</td>
+        <td>0.931159</td>
+        <td>0.209841</td>
+        <td><a href="imgs/148.jpg" data-lightbox="train"><img src="imgs/148.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.165619</td>
+        <td>0.938406</td>
+        <td>0.193702</td>
+        <td><a href="imgs/149.jpg" data-lightbox="train"><img src="imgs/149.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.182796</td>
+        <td>0.913043</td>
+        <td>0.218655</td>
+        <td><a href="imgs/150.jpg" data-lightbox="train"><img src="imgs/150.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.941532</td>
+        <td>0.174338</td>
+        <td>0.942029</td>
+        <td>0.190055</td>
+        <td><a href="imgs/151.jpg" data-lightbox="train"><img src="imgs/151.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.178022</td>
+        <td>0.923913</td>
+        <td>0.197918</td>
+        <td><a href="imgs/152.jpg" data-lightbox="train"><img src="imgs/152.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.185370</td>
+        <td>0.923913</td>
+        <td>0.199424</td>
+        <td><a href="imgs/153.jpg" data-lightbox="train"><img src="imgs/153.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.945565</td>
+        <td>0.163699</td>
+        <td>0.934783</td>
+        <td>0.189795</td>
+        <td><a href="imgs/154.jpg" data-lightbox="train"><img src="imgs/154.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.172873</td>
+        <td>0.938406</td>
+        <td>0.190400</td>
+        <td><a href="imgs/155.jpg" data-lightbox="train"><img src="imgs/155.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.179838</td>
+        <td>0.909420</td>
+        <td>0.256034</td>
+        <td><a href="imgs/156.jpg" data-lightbox="train"><img src="imgs/156.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.186153</td>
+        <td>0.934783</td>
+        <td>0.210154</td>
+        <td><a href="imgs/157.jpg" data-lightbox="train"><img src="imgs/157.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.191590</td>
+        <td>0.916667</td>
+        <td>0.212188</td>
+        <td><a href="imgs/158.jpg" data-lightbox="train"><img src="imgs/158.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.187973</td>
+        <td>0.869565</td>
+        <td>0.367974</td>
+        <td><a href="imgs/159.jpg" data-lightbox="train"><img src="imgs/159.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.157831</td>
+        <td>0.923913</td>
+        <td>0.209731</td>
+        <td><a href="imgs/160.jpg" data-lightbox="train"><img src="imgs/160.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.192028</td>
+        <td>0.894928</td>
+        <td>0.242790</td>
+        <td><a href="imgs/161.jpg" data-lightbox="train"><img src="imgs/161.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.192149</td>
+        <td>0.934783</td>
+        <td>0.222743</td>
+        <td><a href="imgs/162.jpg" data-lightbox="train"><img src="imgs/162.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.174686</td>
+        <td>0.905797</td>
+        <td>0.250332</td>
+        <td><a href="imgs/163.jpg" data-lightbox="train"><img src="imgs/163.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.186241</td>
+        <td>0.934783</td>
+        <td>0.202409</td>
+        <td><a href="imgs/164.jpg" data-lightbox="train"><img src="imgs/164.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.185556</td>
+        <td>0.938406</td>
+        <td>0.203083</td>
+        <td><a href="imgs/165.jpg" data-lightbox="train"><img src="imgs/165.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.175453</td>
+        <td>0.923913</td>
+        <td>0.192728</td>
+        <td><a href="imgs/166.jpg" data-lightbox="train"><img src="imgs/166.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.187704</td>
+        <td>0.909420</td>
+        <td>0.267299</td>
+        <td><a href="imgs/167.jpg" data-lightbox="train"><img src="imgs/167.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.188016</td>
+        <td>0.927536</td>
+        <td>0.213721</td>
+        <td><a href="imgs/168.jpg" data-lightbox="train"><img src="imgs/168.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.176290</td>
+        <td>0.920290</td>
+        <td>0.184442</td>
+        <td><a href="imgs/169.jpg" data-lightbox="train"><img src="imgs/169.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.185760</td>
+        <td>0.913043</td>
+        <td>0.218440</td>
+        <td><a href="imgs/170.jpg" data-lightbox="train"><img src="imgs/170.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.181437</td>
+        <td>0.916667</td>
+        <td>0.208595</td>
+        <td><a href="imgs/171.jpg" data-lightbox="train"><img src="imgs/171.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.170179</td>
+        <td>0.938406</td>
+        <td>0.200585</td>
+        <td><a href="imgs/172.jpg" data-lightbox="train"><img src="imgs/172.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.177221</td>
+        <td>0.927536</td>
+        <td>0.211633</td>
+        <td><a href="imgs/173.jpg" data-lightbox="train"><img src="imgs/173.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.186267</td>
+        <td>0.938406</td>
+        <td>0.215614</td>
+        <td><a href="imgs/174.jpg" data-lightbox="train"><img src="imgs/174.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.165525</td>
+        <td>0.931159</td>
+        <td>0.202738</td>
+        <td><a href="imgs/175.jpg" data-lightbox="train"><img src="imgs/175.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.173802</td>
+        <td>0.931159</td>
+        <td>0.202109</td>
+        <td><a href="imgs/176.jpg" data-lightbox="train"><img src="imgs/176.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.188742</td>
+        <td>0.873188</td>
+        <td>0.282663</td>
+        <td><a href="imgs/177.jpg" data-lightbox="train"><img src="imgs/177.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.164619</td>
+        <td>0.923913</td>
+        <td>0.188500</td>
+        <td><a href="imgs/178.jpg" data-lightbox="train"><img src="imgs/178.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.184622</td>
+        <td>0.913043</td>
+        <td>0.219628</td>
+        <td><a href="imgs/179.jpg" data-lightbox="train"><img src="imgs/179.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.0005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.190019</td>
+        <td>0.931159</td>
+        <td>0.198681</td>
+        <td><a href="imgs/180.jpg" data-lightbox="train"><img src="imgs/180.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.941532</td>
+        <td>0.178956</td>
+        <td>0.934783</td>
+        <td>0.185460</td>
+        <td><a href="imgs/188.jpg" data-lightbox="train"><img src="imgs/188.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.182273</td>
+        <td>0.931159</td>
+        <td>0.221973</td>
+        <td><a href="imgs/189.jpg" data-lightbox="train"><img src="imgs/189.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.943548</td>
+        <td>0.163419</td>
+        <td>0.938406</td>
+        <td>0.171844</td>
+        <td><a href="imgs/190.jpg" data-lightbox="train"><img src="imgs/190.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.183548</td>
+        <td>0.920290</td>
+        <td>0.171362</td>
+        <td><a href="imgs/191.jpg" data-lightbox="train"><img src="imgs/191.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.179803</td>
+        <td>0.887681</td>
+        <td>0.265811</td>
+        <td><a href="imgs/192.jpg" data-lightbox="train"><img src="imgs/192.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.196335</td>
+        <td>0.927536</td>
+        <td>0.188313</td>
+        <td><a href="imgs/193.jpg" data-lightbox="train"><img src="imgs/193.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.196278</td>
+        <td>0.923913</td>
+        <td>0.201431</td>
+        <td><a href="imgs/194.jpg" data-lightbox="train"><img src="imgs/194.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.207867</td>
+        <td>0.909420</td>
+        <td>0.208059</td>
+        <td><a href="imgs/195.jpg" data-lightbox="train"><img src="imgs/195.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.185431</td>
+        <td>0.927536</td>
+        <td>0.196327</td>
+        <td><a href="imgs/196.jpg" data-lightbox="train"><img src="imgs/196.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.193337</td>
+        <td>0.931159</td>
+        <td>0.196324</td>
+        <td><a href="imgs/197.jpg" data-lightbox="train"><img src="imgs/197.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.193062</td>
+        <td>0.905797</td>
+        <td>0.209038</td>
+        <td><a href="imgs/198.jpg" data-lightbox="train"><img src="imgs/198.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.202884</td>
+        <td>0.923913</td>
+        <td>0.195314</td>
+        <td><a href="imgs/199.jpg" data-lightbox="train"><img src="imgs/199.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.187953</td>
+        <td>0.938406</td>
+        <td>0.183238</td>
+        <td><a href="imgs/200.jpg" data-lightbox="train"><img src="imgs/200.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.201943</td>
+        <td>0.920290</td>
+        <td>0.197813</td>
+        <td><a href="imgs/201.jpg" data-lightbox="train"><img src="imgs/201.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.178189</td>
+        <td>0.934783</td>
+        <td>0.179786</td>
+        <td><a href="imgs/202.jpg" data-lightbox="train"><img src="imgs/202.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.197112</td>
+        <td>0.934783</td>
+        <td>0.198641</td>
+        <td><a href="imgs/203.jpg" data-lightbox="train"><img src="imgs/203.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.200096</td>
+        <td>0.931159</td>
+        <td>0.197997</td>
+        <td><a href="imgs/204.jpg" data-lightbox="train"><img src="imgs/204.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.180093</td>
+        <td>0.923913</td>
+        <td>0.191695</td>
+        <td><a href="imgs/205.jpg" data-lightbox="train"><img src="imgs/205.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.184161</td>
+        <td>0.927536</td>
+        <td>0.197208</td>
+        <td><a href="imgs/206.jpg" data-lightbox="train"><img src="imgs/206.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.185887</td>
+        <td>0.844203</td>
+        <td>0.414312</td>
+        <td><a href="imgs/207.jpg" data-lightbox="train"><img src="imgs/207.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.941532</td>
+        <td>0.183572</td>
+        <td>0.923913</td>
+        <td>0.212270</td>
+        <td><a href="imgs/208.jpg" data-lightbox="train"><img src="imgs/208.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.186483</td>
+        <td>0.931159</td>
+        <td>0.191704</td>
+        <td><a href="imgs/209.jpg" data-lightbox="train"><img src="imgs/209.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.191135</td>
+        <td>0.923913</td>
+        <td>0.242803</td>
+        <td><a href="imgs/210.jpg" data-lightbox="train"><img src="imgs/210.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.175602</td>
+        <td>0.934783</td>
+        <td>0.178175</td>
+        <td><a href="imgs/211.jpg" data-lightbox="train"><img src="imgs/211.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.187962</td>
+        <td>0.927536</td>
+        <td>0.184162</td>
+        <td><a href="imgs/212.jpg" data-lightbox="train"><img src="imgs/212.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.192693</td>
+        <td>0.934783</td>
+        <td>0.208594</td>
+        <td><a href="imgs/213.jpg" data-lightbox="train"><img src="imgs/213.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.945565</td>
+        <td>0.174405</td>
+        <td>0.934783</td>
+        <td>0.188292</td>
+        <td><a href="imgs/214.jpg" data-lightbox="train"><img src="imgs/214.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.176102</td>
+        <td>0.934783</td>
+        <td>0.179093</td>
+        <td><a href="imgs/215.jpg" data-lightbox="train"><img src="imgs/215.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00050</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.196001</td>
+        <td>0.931159</td>
+        <td>0.189819</td>
+        <td><a href="imgs/216.jpg" data-lightbox="train"><img src="imgs/216.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.175016</td>
+        <td>0.927536</td>
+        <td>0.212027</td>
+        <td><a href="imgs/217.jpg" data-lightbox="train"><img src="imgs/217.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.195204</td>
+        <td>0.920290</td>
+        <td>0.230757</td>
+        <td><a href="imgs/218.jpg" data-lightbox="train"><img src="imgs/218.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.161438</td>
+        <td>0.916667</td>
+        <td>0.241078</td>
+        <td><a href="imgs/219.jpg" data-lightbox="train"><img src="imgs/219.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.937500</td>
+        <td>0.174171</td>
+        <td>0.927536</td>
+        <td>0.218435</td>
+        <td><a href="imgs/220.jpg" data-lightbox="train"><img src="imgs/220.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.200670</td>
+        <td>0.920290</td>
+        <td>0.252399</td>
+        <td><a href="imgs/221.jpg" data-lightbox="train"><img src="imgs/221.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.169821</td>
+        <td>0.927536</td>
+        <td>0.231715</td>
+        <td><a href="imgs/222.jpg" data-lightbox="train"><img src="imgs/222.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.162370</td>
+        <td>0.938406</td>
+        <td>0.215988</td>
+        <td><a href="imgs/223.jpg" data-lightbox="train"><img src="imgs/223.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.192205</td>
+        <td>0.913043</td>
+        <td>0.220352</td>
+        <td><a href="imgs/224.jpg" data-lightbox="train"><img src="imgs/224.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.943548</td>
+        <td>0.166953</td>
+        <td>0.927536</td>
+        <td>0.226070</td>
+        <td><a href="imgs/225.jpg" data-lightbox="train"><img src="imgs/225.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.157554</td>
+        <td>0.934783</td>
+        <td>0.197338</td>
+        <td><a href="imgs/226.jpg" data-lightbox="train"><img src="imgs/226.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.188481</td>
+        <td>0.909420</td>
+        <td>0.224202</td>
+        <td><a href="imgs/227.jpg" data-lightbox="train"><img src="imgs/227.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.164917</td>
+        <td>0.927536</td>
+        <td>0.223356</td>
+        <td><a href="imgs/228.jpg" data-lightbox="train"><img src="imgs/228.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.191704</td>
+        <td>0.905797</td>
+        <td>0.237748</td>
+        <td><a href="imgs/229.jpg" data-lightbox="train"><img src="imgs/229.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.901210</td>
+        <td>0.237064</td>
+        <td>0.894928</td>
+        <td>0.283230</td>
+        <td><a href="imgs/230.jpg" data-lightbox="train"><img src="imgs/230.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.176691</td>
+        <td>0.916667</td>
+        <td>0.245247</td>
+        <td><a href="imgs/231.jpg" data-lightbox="train"><img src="imgs/231.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.186412</td>
+        <td>0.927536</td>
+        <td>0.221837</td>
+        <td><a href="imgs/232.jpg" data-lightbox="train"><img src="imgs/232.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.905242</td>
+        <td>0.236855</td>
+        <td>0.894928</td>
+        <td>0.277063</td>
+        <td><a href="imgs/233.jpg" data-lightbox="train"><img src="imgs/233.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.177980</td>
+        <td>0.920290</td>
+        <td>0.232621</td>
+        <td><a href="imgs/234.jpg" data-lightbox="train"><img src="imgs/234.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.173676</td>
+        <td>0.920290</td>
+        <td>0.217879</td>
+        <td><a href="imgs/235.jpg" data-lightbox="train"><img src="imgs/235.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.214603</td>
+        <td>0.898551</td>
+        <td>0.278179</td>
+        <td><a href="imgs/236.jpg" data-lightbox="train"><img src="imgs/236.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.186954</td>
+        <td>0.909420</td>
+        <td>0.246839</td>
+        <td><a href="imgs/237.jpg" data-lightbox="train"><img src="imgs/237.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.204760</td>
+        <td>0.902174</td>
+        <td>0.244534</td>
+        <td><a href="imgs/238.jpg" data-lightbox="train"><img src="imgs/238.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.907258</td>
+        <td>0.220926</td>
+        <td>0.891304</td>
+        <td>0.261090</td>
+        <td><a href="imgs/239.jpg" data-lightbox="train"><img src="imgs/239.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.170090</td>
+        <td>0.916667</td>
+        <td>0.219265</td>
+        <td><a href="imgs/240.jpg" data-lightbox="train"><img src="imgs/240.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.178959</td>
+        <td>0.916667</td>
+        <td>0.213646</td>
+        <td><a href="imgs/241.jpg" data-lightbox="train"><img src="imgs/241.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.200234</td>
+        <td>0.916667</td>
+        <td>0.247432</td>
+        <td><a href="imgs/242.jpg" data-lightbox="train"><img src="imgs/242.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.182879</td>
+        <td>0.923913</td>
+        <td>0.229775</td>
+        <td><a href="imgs/243.jpg" data-lightbox="train"><img src="imgs/243.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.178240</td>
+        <td>0.920290</td>
+        <td>0.224806</td>
+        <td><a href="imgs/244.jpg" data-lightbox="train"><img src="imgs/244.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.913306</td>
+        <td>0.217972</td>
+        <td>0.902174</td>
+        <td>0.254815</td>
+        <td><a href="imgs/245.jpg" data-lightbox="train"><img src="imgs/245.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.167605</td>
+        <td>0.913043</td>
+        <td>0.226761</td>
+        <td><a href="imgs/246.jpg" data-lightbox="train"><img src="imgs/246.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.185209</td>
+        <td>0.931159</td>
+        <td>0.214989</td>
+        <td><a href="imgs/247.jpg" data-lightbox="train"><img src="imgs/247.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.915323</td>
+        <td>0.204703</td>
+        <td>0.909420</td>
+        <td>0.243073</td>
+        <td><a href="imgs/248.jpg" data-lightbox="train"><img src="imgs/248.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.935484</td>
+        <td>0.168601</td>
+        <td>0.927536</td>
+        <td>0.215633</td>
+        <td><a href="imgs/249.jpg" data-lightbox="train"><img src="imgs/249.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.171406</td>
+        <td>0.934783</td>
+        <td>0.209304</td>
+        <td><a href="imgs/250.jpg" data-lightbox="train"><img src="imgs/250.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.913306</td>
+        <td>0.198053</td>
+        <td>0.905797</td>
+        <td>0.231802</td>
+        <td><a href="imgs/251.jpg" data-lightbox="train"><img src="imgs/251.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>64</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.169670</td>
+        <td>0.942029</td>
+        <td>0.212441</td>
+        <td><a href="imgs/252.jpg" data-lightbox="train"><img src="imgs/252.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.198232</td>
+        <td>0.927536</td>
+        <td>0.209853</td>
+        <td><a href="imgs/253.jpg" data-lightbox="train"><img src="imgs/253.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.903226</td>
+        <td>0.233571</td>
+        <td>0.894928</td>
+        <td>0.263746</td>
+        <td><a href="imgs/254.jpg" data-lightbox="train"><img src="imgs/254.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.177411</td>
+        <td>0.938406</td>
+        <td>0.198583</td>
+        <td><a href="imgs/255.jpg" data-lightbox="train"><img src="imgs/255.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.186071</td>
+        <td>0.923913</td>
+        <td>0.211123</td>
+        <td><a href="imgs/256.jpg" data-lightbox="train"><img src="imgs/256.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.907258</td>
+        <td>0.228022</td>
+        <td>0.909420</td>
+        <td>0.252877</td>
+        <td><a href="imgs/257.jpg" data-lightbox="train"><img src="imgs/257.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.189755</td>
+        <td>0.920290</td>
+        <td>0.213934</td>
+        <td><a href="imgs/258.jpg" data-lightbox="train"><img src="imgs/258.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.179681</td>
+        <td>0.923913</td>
+        <td>0.218151</td>
+        <td><a href="imgs/259.jpg" data-lightbox="train"><img src="imgs/259.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.911290</td>
+        <td>0.220868</td>
+        <td>0.916667</td>
+        <td>0.247825</td>
+        <td><a href="imgs/260.jpg" data-lightbox="train"><img src="imgs/260.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.929435</td>
+        <td>0.181315</td>
+        <td>0.934783</td>
+        <td>0.203293</td>
+        <td><a href="imgs/261.jpg" data-lightbox="train"><img src="imgs/261.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.941532</td>
+        <td>0.179522</td>
+        <td>0.934783</td>
+        <td>0.206450</td>
+        <td><a href="imgs/262.jpg" data-lightbox="train"><img src="imgs/262.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.911290</td>
+        <td>0.220629</td>
+        <td>0.920290</td>
+        <td>0.244352</td>
+        <td><a href="imgs/263.jpg" data-lightbox="train"><img src="imgs/263.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.183678</td>
+        <td>0.938406</td>
+        <td>0.213820</td>
+        <td><a href="imgs/264.jpg" data-lightbox="train"><img src="imgs/264.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.210224</td>
+        <td>0.913043</td>
+        <td>0.235854</td>
+        <td><a href="imgs/265.jpg" data-lightbox="train"><img src="imgs/265.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.887097</td>
+        <td>0.268813</td>
+        <td>0.884058</td>
+        <td>0.312186</td>
+        <td><a href="imgs/266.jpg" data-lightbox="train"><img src="imgs/266.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.202306</td>
+        <td>0.923913</td>
+        <td>0.219055</td>
+        <td><a href="imgs/267.jpg" data-lightbox="train"><img src="imgs/267.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.913306</td>
+        <td>0.200901</td>
+        <td>0.909420</td>
+        <td>0.242324</td>
+        <td><a href="imgs/268.jpg" data-lightbox="train"><img src="imgs/268.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.891129</td>
+        <td>0.256314</td>
+        <td>0.891304</td>
+        <td>0.300715</td>
+        <td><a href="imgs/269.jpg" data-lightbox="train"><img src="imgs/269.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.198656</td>
+        <td>0.927536</td>
+        <td>0.223232</td>
+        <td><a href="imgs/270.jpg" data-lightbox="train"><img src="imgs/270.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.201921</td>
+        <td>0.927536</td>
+        <td>0.213110</td>
+        <td><a href="imgs/271.jpg" data-lightbox="train"><img src="imgs/271.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.887097</td>
+        <td>0.253540</td>
+        <td>0.887681</td>
+        <td>0.278199</td>
+        <td><a href="imgs/272.jpg" data-lightbox="train"><img src="imgs/272.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.915323</td>
+        <td>0.202255</td>
+        <td>0.905797</td>
+        <td>0.228014</td>
+        <td><a href="imgs/273.jpg" data-lightbox="train"><img src="imgs/273.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.200716</td>
+        <td>0.905797</td>
+        <td>0.231154</td>
+        <td><a href="imgs/274.jpg" data-lightbox="train"><img src="imgs/274.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.909274</td>
+        <td>0.243569</td>
+        <td>0.894928</td>
+        <td>0.276031</td>
+        <td><a href="imgs/275.jpg" data-lightbox="train"><img src="imgs/275.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.191878</td>
+        <td>0.923913</td>
+        <td>0.215433</td>
+        <td><a href="imgs/276.jpg" data-lightbox="train"><img src="imgs/276.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.190232</td>
+        <td>0.916667</td>
+        <td>0.213222</td>
+        <td><a href="imgs/277.jpg" data-lightbox="train"><img src="imgs/277.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.899194</td>
+        <td>0.248362</td>
+        <td>0.880435</td>
+        <td>0.271418</td>
+        <td><a href="imgs/278.jpg" data-lightbox="train"><img src="imgs/278.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.185986</td>
+        <td>0.923913</td>
+        <td>0.211256</td>
+        <td><a href="imgs/279.jpg" data-lightbox="train"><img src="imgs/279.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.188691</td>
+        <td>0.916667</td>
+        <td>0.208448</td>
+        <td><a href="imgs/280.jpg" data-lightbox="train"><img src="imgs/280.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.881048</td>
+        <td>0.262159</td>
+        <td>0.873188</td>
+        <td>0.286427</td>
+        <td><a href="imgs/281.jpg" data-lightbox="train"><img src="imgs/281.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.189391</td>
+        <td>0.931159</td>
+        <td>0.217469</td>
+        <td><a href="imgs/282.jpg" data-lightbox="train"><img src="imgs/282.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.190190</td>
+        <td>0.923913</td>
+        <td>0.211795</td>
+        <td><a href="imgs/283.jpg" data-lightbox="train"><img src="imgs/283.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.905242</td>
+        <td>0.228529</td>
+        <td>0.902174</td>
+        <td>0.269503</td>
+        <td><a href="imgs/284.jpg" data-lightbox="train"><img src="imgs/284.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.184621</td>
+        <td>0.923913</td>
+        <td>0.215196</td>
+        <td><a href="imgs/285.jpg" data-lightbox="train"><img src="imgs/285.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.189794</td>
+        <td>0.909420</td>
+        <td>0.203514</td>
+        <td><a href="imgs/286.jpg" data-lightbox="train"><img src="imgs/286.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.899194</td>
+        <td>0.233339</td>
+        <td>0.905797</td>
+        <td>0.246025</td>
+        <td><a href="imgs/287.jpg" data-lightbox="train"><img src="imgs/287.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>128</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.186972</td>
+        <td>0.927536</td>
+        <td>0.206402</td>
+        <td><a href="imgs/288.jpg" data-lightbox="train"><img src="imgs/288.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.195903</td>
+        <td>0.927536</td>
+        <td>0.207180</td>
+        <td><a href="imgs/289.jpg" data-lightbox="train"><img src="imgs/289.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.907258</td>
+        <td>0.251619</td>
+        <td>0.884058</td>
+        <td>0.272967</td>
+        <td><a href="imgs/290.jpg" data-lightbox="train"><img src="imgs/290.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.176611</td>
+        <td>0.934783</td>
+        <td>0.195117</td>
+        <td><a href="imgs/291.jpg" data-lightbox="train"><img src="imgs/291.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.187369</td>
+        <td>0.920290</td>
+        <td>0.189612</td>
+        <td><a href="imgs/292.jpg" data-lightbox="train"><img src="imgs/292.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.897177</td>
+        <td>0.245829</td>
+        <td>0.898551</td>
+        <td>0.261379</td>
+        <td><a href="imgs/293.jpg" data-lightbox="train"><img src="imgs/293.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.192563</td>
+        <td>0.931159</td>
+        <td>0.203405</td>
+        <td><a href="imgs/294.jpg" data-lightbox="train"><img src="imgs/294.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.185909</td>
+        <td>0.938406</td>
+        <td>0.185914</td>
+        <td><a href="imgs/295.jpg" data-lightbox="train"><img src="imgs/295.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.907258</td>
+        <td>0.229327</td>
+        <td>0.902174</td>
+        <td>0.255360</td>
+        <td><a href="imgs/296.jpg" data-lightbox="train"><img src="imgs/296.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.939516</td>
+        <td>0.178859</td>
+        <td>0.931159</td>
+        <td>0.187718</td>
+        <td><a href="imgs/297.jpg" data-lightbox="train"><img src="imgs/297.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.931452</td>
+        <td>0.184194</td>
+        <td>0.938406</td>
+        <td>0.195495</td>
+        <td><a href="imgs/298.jpg" data-lightbox="train"><img src="imgs/298.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.911290</td>
+        <td>0.239774</td>
+        <td>0.891304</td>
+        <td>0.253724</td>
+        <td><a href="imgs/299.jpg" data-lightbox="train"><img src="imgs/299.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>oversample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.933468</td>
+        <td>0.185322</td>
+        <td>0.923913</td>
+        <td>0.188454</td>
+        <td><a href="imgs/300.jpg" data-lightbox="train"><img src="imgs/300.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.911290</td>
+        <td>0.210837</td>
+        <td>0.923913</td>
+        <td>0.210715</td>
+        <td><a href="imgs/301.jpg" data-lightbox="train"><img src="imgs/301.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.881048</td>
+        <td>0.293123</td>
+        <td>0.869565</td>
+        <td>0.312764</td>
+        <td><a href="imgs/302.jpg" data-lightbox="train"><img src="imgs/302.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.911290</td>
+        <td>0.204834</td>
+        <td>0.913043</td>
+        <td>0.219666</td>
+        <td><a href="imgs/303.jpg" data-lightbox="train"><img src="imgs/303.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.927419</td>
+        <td>0.212021</td>
+        <td>0.927536</td>
+        <td>0.208089</td>
+        <td><a href="imgs/304.jpg" data-lightbox="train"><img src="imgs/304.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.872984</td>
+        <td>0.293947</td>
+        <td>0.862319</td>
+        <td>0.302612</td>
+        <td><a href="imgs/305.jpg" data-lightbox="train"><img src="imgs/305.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.905242</td>
+        <td>0.219795</td>
+        <td>0.898551</td>
+        <td>0.240215</td>
+        <td><a href="imgs/306.jpg" data-lightbox="train"><img src="imgs/306.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.205375</td>
+        <td>0.923913</td>
+        <td>0.209224</td>
+        <td><a href="imgs/307.jpg" data-lightbox="train"><img src="imgs/307.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.862903</td>
+        <td>0.306553</td>
+        <td>0.844203</td>
+        <td>0.320441</td>
+        <td><a href="imgs/308.jpg" data-lightbox="train"><img src="imgs/308.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.915323</td>
+        <td>0.209452</td>
+        <td>0.923913</td>
+        <td>0.185877</td>
+        <td><a href="imgs/309.jpg" data-lightbox="train"><img src="imgs/309.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.917339</td>
+        <td>0.205088</td>
+        <td>0.913043</td>
+        <td>0.206616</td>
+        <td><a href="imgs/310.jpg" data-lightbox="train"><img src="imgs/310.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.903226</td>
+        <td>0.257490</td>
+        <td>0.876812</td>
+        <td>0.265930</td>
+        <td><a href="imgs/311.jpg" data-lightbox="train"><img src="imgs/311.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>subsample</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.193449</td>
+        <td>0.913043</td>
+        <td>0.188458</td>
+        <td><a href="imgs/312.jpg" data-lightbox="train"><img src="imgs/312.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.192568</td>
+        <td>0.927536</td>
+        <td>0.198832</td>
+        <td><a href="imgs/313.jpg" data-lightbox="train"><img src="imgs/313.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.887097</td>
+        <td>0.266619</td>
+        <td>0.884058</td>
+        <td>0.270147</td>
+        <td><a href="imgs/314.jpg" data-lightbox="train"><img src="imgs/314.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.923387</td>
+        <td>0.189676</td>
+        <td>0.920290</td>
+        <td>0.202497</td>
+        <td><a href="imgs/315.jpg" data-lightbox="train"><img src="imgs/315.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.199081</td>
+        <td>0.916667</td>
+        <td>0.197349</td>
+        <td><a href="imgs/316.jpg" data-lightbox="train"><img src="imgs/316.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.903226</td>
+        <td>0.248255</td>
+        <td>0.898551</td>
+        <td>0.249997</td>
+        <td><a href="imgs/317.jpg" data-lightbox="train"><img src="imgs/317.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 128, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.193223</td>
+        <td>0.934783</td>
+        <td>0.197760</td>
+        <td><a href="imgs/318.jpg" data-lightbox="train"><img src="imgs/318.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.919355</td>
+        <td>0.193145</td>
+        <td>0.913043</td>
+        <td>0.213661</td>
+        <td><a href="imgs/319.jpg" data-lightbox="train"><img src="imgs/319.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.909274</td>
+        <td>0.237744</td>
+        <td>0.909420</td>
+        <td>0.240217</td>
+        <td><a href="imgs/320.jpg" data-lightbox="train"><img src="imgs/320.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 128, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.200812</td>
+        <td>0.927536</td>
+        <td>0.203987</td>
+        <td><a href="imgs/321.jpg" data-lightbox="train"><img src="imgs/321.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>std_adam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.921371</td>
+        <td>0.188187</td>
+        <td>0.923913</td>
+        <td>0.193099</td>
+        <td><a href="imgs/322.jpg" data-lightbox="train"><img src="imgs/322.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>radam</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.909274</td>
+        <td>0.246253</td>
+        <td>0.902174</td>
+        <td>0.240518</td>
+        <td><a href="imgs/323.jpg" data-lightbox="train"><img src="imgs/323.jpg" width="75px"></a></td>
+      </tr>
+      <tr>
+        <td>0.00005</td>
+        <td>192</td>
+        <td>class_weight</td>
+        <td>rmsprop</td>
+        <td>25</td>
+        <td>imagenet</td>
+        <td>[Dense 256, relu], [Dropout 0.4, 42], [Dense 256, relu], [Dropout 0.4, 42]</td>
+        <td>0.925403</td>
+        <td>0.181405</td>
+        <td>0.920290</td>
+        <td>0.205800</td>
+        <td><a href="imgs/324.jpg" data-lightbox="train"><img src="imgs/324.jpg" width="75px"></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    $(document).ready(() => {
+      $('#dataframe thead tr').clone(true).appendTo('#dataframe thead');
+      $('#dataframe thead tr:eq(1) th').each(function (i) {
+        var title = $(this).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+
+        $('input', this).on('keyup change', function () {
+          if (table.column(i).search() !== this.value) {
+            table
+              .column(i)
+              .search(this.value)
+              .draw();
+          }
+        });
+      });
+
+      var table = $('#dataframe').DataTable({
+        scrollX: true,
+        orderCellsTop: true,
+        fixedHeader: true
+      })
+
+      lightbox.option({
+        fadeDuration: 180,
+        imageFadeDuration: 180,
+        resizeDuration: 180
+      })
+    })
+  </script>
+</body>
+
+</html>
